@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+</head>
+
+<body>
+	<h1></h1>
+	<button>Change user</button>
+    <img src="https://cn.bing.com/az/hprichbg/rb/ColdMoonRising_ZH-CN6131399146_1920x1080.jpg" style="height: 300px;width:auto;">
+    <script>
+
+    	window.onload=function(){
+    		var myButton = document.querySelector('button');
+			var myHeading = document.querySelector('h1');
+			if(!localStorage.getItem('name')) {
+			  setUserName();
+			} else {
+			  var storedName = localStorage.getItem('name');
+			  myHeading.textContent = 'Mozilla is cool, ' + storedName;
+			}
+			myButton.onclick = function() {
+			  setUserName();
+			}
+			
+	    	var myImage = document.querySelector('img');
+
+			myImage.onclick = function() {
+			    var mySrc = myImage.getAttribute('src');
+			    if(mySrc === 'https://cn.bing.com/az/hprichbg/rb/ColdMoonRising_ZH-CN6131399146_1920x1080.jpg') {
+			      myImage.setAttribute('src', 'https://cn.bing.com/az/hprichbg/rb/WinterIllumination_ZH-CN9373805444_1920x1080.jpg');
+			    } else {
+			      myImage.setAttribute('src', 'https://cn.bing.com/az/hprichbg/rb/ColdMoonRising_ZH-CN6131399146_1920x1080.jpg');
+			    }
+			}
+    	}
+    	
+    	function setUserName() {
+		  var myName = prompt('Please enter your name.');
+		  localStorage.setItem('name', myName);
+		  myHeading.textContent = 'Mozilla is cool, ' + myName;
+		}
+
+		
+
+    </script>
+</body>
+
+</html>
