@@ -75,7 +75,7 @@ li{
     border:0;
 }
 
-.clearfix::before,
+.clearfix:before,
 .clearfix:after{
     content:" ";
     display:table;
